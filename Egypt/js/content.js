@@ -10,7 +10,7 @@ function moveSpan() {
         document.querySelector(".selector > span").style.width = `${document.querySelector("#body .selector button[active]").getBoundingClientRect().width}px`;
         document.querySelector(".selector > span").style.top = `${document.querySelector("#body .selector button[active]").offsetTop + document.querySelector("#body .selector button[active]").getBoundingClientRect().height}px`;
         document.querySelector(".selector > span").style.left = `${document.querySelector("#body .selector button[active]").offsetLeft}px`;
-};
+};moveSpan()
 
 contentElem.querySelector(".aboutEG").setAttribute("active", "");
 
