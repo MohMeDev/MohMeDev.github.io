@@ -1,4 +1,14 @@
 
+if (String.prototype.replaceAll == undefined) {
+    RegExp.escape = function(text) {
+        return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+    }
+
+    String.prototype.replaceAll = function(search, replace) {
+        return this.replace(new RegExp(RegExp.escape(search),'g'), replace);
+    };
+}
+
 // Images Customization
 $$("[data-imgAlt]").forEach(a => {
     a.outerHTML = `<div class="imgBox" style="${a.getAttribute("data-css")}">${a.outerHTML}<p>${a.getAttribute("data-imgAlt")}</p></div>`;
